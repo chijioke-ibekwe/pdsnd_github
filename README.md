@@ -3,8 +3,8 @@
 ### Date created
 Include the date you created this project and README file.
 
-### Project Title
-Replace the Project Title
+### Course Title
+Programming for Data Science with Python
 
 ### Description
 Describe what your project is about and what it does
