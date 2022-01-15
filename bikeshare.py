@@ -161,7 +161,7 @@ def user_stats(df):
     print(df['User Type'].value_counts())
 
     # TO DO: Display counts of gender
-    print("\nGender Count is: ")
+    print("\nGender Count details are as follows: ")
     
     try:
         print(df['Gender'].value_counts())
