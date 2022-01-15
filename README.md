@@ -3,8 +3,8 @@
 ### Date created
 15/01/2022
 
-### Project Title
-Replace the Project Title
+### Course Title
+Programming for Data Science with Python
 
 ### Description
 Describe what your project is about and what it does
