@@ -208,9 +208,10 @@ def main():
         user_stats(df)
         display_raw_data(df)
         restart = ""
+
         while True:
             try:
-                restart = input('\nWould you like to restart? Enter yes or no: ')
+                restart = input('\nWould you like to restart? (Enter yes or no): ')
                 if restart.lower() != 'yes' and restart.lower() != 'no':
                     raise Exception()
                 elif restart.lower() == 'no' or restart.lower() == 'yes':
