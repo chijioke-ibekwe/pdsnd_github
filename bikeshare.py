@@ -141,10 +141,10 @@ def trip_duration_stats(df):
     start_time = time.time()
 
     # TO DO: display total travel time
-    print("Total travel time is {} minutes".format(df['Trip Duration'].sum()))
+    print("Total travel time is {} minutes".format(df['Trip Duration'].sum().round()))
 
     # TO DO: display mean travel time
-    print("Mean travel time is {} minutes".format(df['Trip Duration'].mean()))
+    print("Mean travel time is {} minutes".format(df['Trip Duration'].mean().round()))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -179,6 +179,22 @@ def user_stats(df):
         print("Birth Year column is absent in the dataset")
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
+    
+def display_raw_data(df):
+    """ Prompts user to display raw data """
+    i = 0
+    raw = input("Would you like to see the raw data (yes or no): ").lower() # TO DO: convert the user input to lower case using lower() function
+    pd.set_option('display.max_columns',200)
+
+    while True:            
+        if raw == 'no':
+            break
+        elif raw == 'yes':
+            print(df.iloc[i:i+5, :]) # TO DO: appropriately subset/slice your dataframe to display next five rows
+            raw = input("Would you like to see the next 5 rows (yes or no): ").lower() # TO DO: convert the user input to lower case using lower() function
+            i += 5
+        else:
+            raw = input("\nYour input is invalid. Please enter only 'yes' or 'no'\n").lower()
 
 
 def main():
@@ -190,11 +206,19 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
+        display_raw_data(df)
+        restart = ""
+        while True:
+            try:
+                restart = input('\nWould you like to restart? Enter yes or no: ')
+                if restart.lower() != 'yes' and restart.lower() != 'no':
+                    raise Exception()
+                elif restart.lower() == 'no' or restart.lower() == 'yes':
+                    break
+            except Exception:
+                print("Kindly enter a valid response")
+                
+        if restart.lower() == 'no':
             break
-
-
 if __name__ == "__main__":
 	main()
