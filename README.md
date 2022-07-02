@@ -6,7 +6,7 @@
 Python Bike Share Project
 
 ### Description
-This project involved using python code to analyze the bike share system in the cities of Washington, Chicago and New York City. Frameworks used in executing this project include Pandas and NumPy.
+This project involves using python code to analyze the bike share system in the cities of Washington, Chicago and New York City. Frameworks used in executing this project include Pandas and NumPy.
 
 ### Files used
 chicago,csv, new_york_city.csv, washington.csv
